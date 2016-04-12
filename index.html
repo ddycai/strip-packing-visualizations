@@ -1,0 +1,65 @@
+<!doctype html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Strip Packing Animation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+  <body>
+    <div id="slider">
+      <div id="trigger" class="handle">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </div>
+      <p><code>ESC</code> to close</p>
+      <h3>Input</h3>
+      <p>Each line is a new rectangle in the following format <code>w h</code>
+      where <code>w</code> and <code>h</code> are the width,
+      height, respectively.</p>
+      <div class="input-container form-group">
+      <textarea rows="5" id="input" class="input-area form-control"></textarea>
+      </div>
+      <div class="clear"></div>
+
+      <button id="solve-button" class="btn btn-default">Go</button>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <canvas id="packing" width="450" height="600"></canvas>
+        </div>
+        <div id="info">
+          <label><strong>Select an algorithm:</strong></label>
+          <select class="form-control" id="algorithm">
+            <option value="0">First fit decreasing height</option>
+            <option value="1">Next fit decreasing height</option>
+            <option value="2">Best fit decreasing height</option>
+            <option value="3">Split fit</option>
+          </select>
+          <div id="message-box">
+            <p id="message"></p>
+          </div>
+          <button id="reset-button" class="btn btn-default">Reset</button>
+          <button id="continue-button" class="btn btn-default">Continue</button>
+          <button id="finish-button" class="btn btn-default">Finish</button>
+          <h3>Options</h3>
+          <div class="form-group">
+            <label>How many random rectangles?</label>
+            <input type="text" class="form-control" id="random-count" value="10">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="uniform-random" value="Uniform Random">
+            <label>Use uniform random</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="rainbow-rectangles" value="Rainbow Rectangles">
+            <label>Use rainbow rectangles</label>
+          </div>
+          <button id="random-button" class="btn btn-default">Random Input</button>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="./lib/jquery.slidereveal.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>

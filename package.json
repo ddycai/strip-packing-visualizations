@@ -1,0 +1,14 @@
+{
+  "name": "2dspp",
+  "version": "0.0.0",
+  "description": "2DSPP visualization",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "webpack --watch"
+  },
+  "author": "",
+  "license": "BSD-2-Clause"
+}
