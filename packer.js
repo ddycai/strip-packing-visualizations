@@ -196,15 +196,15 @@ class SplitFit extends StripPackingAlgorithm {
         for (var i = 0; i < this._top_levels.length; i++) {
           if (this._top_levels[i].fits(rect)) {
             this._top_levels[i].addFloor(rect);
-            this.checkPacking();
             this._message += sprintf(
-              "Rectangle %s fits does not fit in R so it goes to the top of the packing using FFDH. "
+              "Rectangle %s does not fit in R so it goes to the top of the packing using FFDH. "
               , rect.toString());
+            this.checkPacking();
             return true;
           }
         }
         this._message += sprintf(
-              "Rectangle %s fits does not fit in R so it goes to the top of the packing using FFDH. "
+              "Rectangle %s does not fit in R so it goes to the top of the packing using FFDH. "
               , rect.toString());
         this._y +=  this._top_levels[this._top_levels.length - 1].height;      
         this._top_levels.push(new Level(0, this._y, 1));      
